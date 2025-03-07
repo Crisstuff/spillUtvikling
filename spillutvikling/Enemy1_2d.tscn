@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6g6eyykbia4t"]
+
+[ext_resource type="Script" uid="uid://bfvxfuylky1mu" path="res://Scripts/character_body_2d.gd" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://13t1vyy4xfk8" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-1.png" id="2_d21ai"]
+[ext_resource type="Texture2D" uid="uid://cy06dbbmr7k34" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-2.png" id="3_rj586"]
+[ext_resource type="Texture2D" uid="uid://bdwcg8cib8pe" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-3.png" id="4_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://bwiaurpcte4l2" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-4.png" id="5_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://n5jna2ddwa5" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/jump/frog-jump-1.png" id="6_hqns4"]
+[ext_resource type="Texture2D" uid="uid://bpjnxhtgf03nn" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/jump/frog-jump-2.png" id="7_x0ka3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(26.2626, 19.1327)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
+atlas = ExtResource("2_d21ai")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
+atlas = ExtResource("3_rj586")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
+atlas = ExtResource("4_4d7sh")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta5nu"]
+atlas = ExtResource("5_ir8iy")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
+atlas = ExtResource("6_hqns4")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
+atlas = ExtResource("7_x0ka3")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d21ai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr8wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2bti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta5nu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k73cj")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[node name="enemy1_2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(445, 246)
+scale = Vector2(3.96, 3.92)
+script = ExtResource("1_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.505058, 40.1786)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(1.01011, 38.7755)
+sprite_frames = SubResource("SpriteFrames_d21ai")
+animation = &"idle"
+autoplay = "idle"

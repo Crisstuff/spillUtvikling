@@ -14,6 +14,7 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		anim.play("jump")
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -21,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	print(direction)
 	if direction > 0:
-		anim.flip_h = false
+		anim.flip_h = false#
 	elif direction < 0:
 		anim.flip_h = true
 	if direction:

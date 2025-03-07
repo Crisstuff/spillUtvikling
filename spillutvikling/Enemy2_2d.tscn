@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://bul5nqv0fdfg3"]
+
+[ext_resource type="Script" uid="uid://bfvxfuylky1mu" path="res://Scripts/character_body_2d.gd" id="1_0axpm"]
+[ext_resource type="Texture2D" uid="uid://duj6o8p6p8emk" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/Grotto-escape-2-lizzard/spritesheets/tongue.png" id="2_qt07t"]
+[ext_resource type="Texture2D" uid="uid://n5jna2ddwa5" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/jump/frog-jump-1.png" id="3_72tus"]
+[ext_resource type="Texture2D" uid="uid://bpjnxhtgf03nn" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/jump/frog-jump-2.png" id="4_swsvs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kppxf"]
+size = Vector2(26.2626, 19.1327)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkj66"]
+atlas = ExtResource("2_qt07t")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryl31"]
+atlas = ExtResource("2_qt07t")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruyp0"]
+atlas = ExtResource("2_qt07t")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td72i"]
+atlas = ExtResource("2_qt07t")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykaqs"]
+atlas = ExtResource("2_qt07t")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flf07"]
+atlas = ExtResource("3_72tus")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k73cj"]
+atlas = ExtResource("4_swsvs")
+region = Rect2(0, 0, 35, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3vno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkj66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryl31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruyp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td72i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykaqs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flf07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k73cj")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(445, 246)
+scale = Vector2(3.96, 3.92)
+script = ExtResource("1_0axpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.505058, 40.1786)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_kppxf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(1.01011, 38.7755)
+sprite_frames = SubResource("SpriteFrames_c3vno")
+animation = &"jump"
+autoplay = "idle"
