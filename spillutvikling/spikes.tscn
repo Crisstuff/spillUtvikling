@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2vaffjxjbue4"]
+
+[ext_resource type="Texture2D" uid="uid://ck1fcx1erbjhi" path="res://spikes.png" id="1_rfegf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qgip"]
+size = Vector2(547, 2686)
+
+[sub_resource type="Animation" id="Animation_cy6od"]
+resource_name = "shake"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gutn7"]
+_data = {
+"shake": SubResource("Animation_cy6od")
+}
+
+[node name="Spikes" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 264)
+rotation = 3.14159
+texture = ExtResource("1_rfegf")
+
+[node name="hitbox" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
+polygon = PackedVector2Array(5, 510, -167, 388, -165, 158, -191, 16, 189, 16, 175, 330, 143, 410)
+
+[node name="playerDetect" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerDetect"]
+position = Vector2(31, 1344)
+shape = SubResource("RectangleShape2D_1qgip")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gutn7")
+}
