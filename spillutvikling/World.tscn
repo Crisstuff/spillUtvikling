@@ -209,12 +209,6 @@ sources/0 = SubResource("TileSetAtlasSource_kxt7u")
 
 [node name="Player side" parent="." instance=ExtResource("1_mmd5s")]
 
-<<<<<<< Updated upstream
-=======
-[node name="enemy1_2D" parent="." instance=ExtResource("2_bcbcq")]
-position = Vector2(1610, -339)
-
->>>>>>> Stashed changes
 [node name="TileMap" type="TileMap" parent="."]
 physics_interpolation_mode = 2
 texture_filter = 1
