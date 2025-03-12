@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://ng6opin765kb"]
 
-[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_53kef"]
+[ext_resource type="Script" uid="uid://bfvxfuylky1mu" path="res://Scripts/character_body_2d.gd" id="1_53kef"]
 [ext_resource type="Texture2D" uid="uid://cfgwgv47ntd81" path="res://Sprites/craftpix-net-679950-free-raider-sprite-sheets-pixel-art/Raider_2/Run.png" id="2_63rkf"]
 [ext_resource type="Texture2D" uid="uid://bhue53x83m6wh" path="res://Sprites/craftpix-net-679950-free-raider-sprite-sheets-pixel-art/Raider_2/Idle.png" id="3_xdss1"]
 

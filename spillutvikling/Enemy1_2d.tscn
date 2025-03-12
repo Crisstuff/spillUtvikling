@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://b6g6eyykbia4t"]
 
-[ext_resource type="Script" uid="uid://bfvxfuylky1mu" path="res://Scripts/character_body_2d.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://bbpqpfeg43i5q" path="res://Scripts/Enemy1_body_2d.gd" id="1_etv6f"]
 [ext_resource type="Texture2D" uid="uid://13t1vyy4xfk8" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-1.png" id="2_d21ai"]
 [ext_resource type="Texture2D" uid="uid://cy06dbbmr7k34" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-2.png" id="3_rj586"]
 [ext_resource type="Texture2D" uid="uid://bdwcg8cib8pe" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/idle/frog-idle-3.png" id="4_4d7sh"]
@@ -71,11 +71,10 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(445, 246)
 scale = Vector2(3.96, 3.92)
-script = ExtResource("1_epypp")
+script = ExtResource("1_etv6f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0.505058, 40.1786)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kdubu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
