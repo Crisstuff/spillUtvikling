@@ -1,10 +1,18 @@
-[gd_scene load_steps=21 format=3 uid="uid://ng6opin765kb"]
+[gd_scene load_steps=23 format=3 uid="uid://ng6opin765kb"]
 
 [ext_resource type="Script" uid="uid://bfvxfuylky1mu" path="res://Scripts/character_body_2d.gd" id="1_53kef"]
 [ext_resource type="Texture2D" uid="uid://fo2s8i0r8m66" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Players/Foxy/Spritesheet.png" id="2_sua48"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml0ni"]
 size = Vector2(22.7272, 22.1939)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sua48"]
+atlas = ExtResource("2_sua48")
+region = Rect2(0, 128, 33, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw0cy"]
+atlas = ExtResource("2_sua48")
+region = Rect2(33, 128, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xatq4"]
 atlas = ExtResource("2_sua48")
@@ -72,6 +80,17 @@ region = Rect2(165, 32, 33, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_81rq1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sua48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw0cy")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xatq4")
@@ -158,5 +177,5 @@ shape = SubResource("RectangleShape2D_ml0ni")
 texture_filter = 1
 position = Vector2(-0.252527, 34.1837)
 sprite_frames = SubResource("SpriteFrames_81rq1")
-animation = &"Jump"
+animation = &"Death"
 autoplay = "Idle"
