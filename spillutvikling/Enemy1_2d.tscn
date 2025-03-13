@@ -83,3 +83,4 @@ position = Vector2(1.01011, 38.7755)
 sprite_frames = SubResource("SpriteFrames_d21ai")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.937872
