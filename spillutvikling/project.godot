@@ -11,6 +11,13 @@ config_version=5
 [application]
 
 config/name="SpillUtvikling"
-run/main_scene="res://tittle_screen.tscn"
+run/main_scene="res://Scenes/tittle_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Scripts/": "green",
+"res://Sprites/": "purple"
+}

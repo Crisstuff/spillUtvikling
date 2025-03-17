@@ -35,4 +35,4 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func die():
-	print("Dead")
+	queue_free()

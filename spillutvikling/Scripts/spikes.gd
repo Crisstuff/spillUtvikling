@@ -9,12 +9,12 @@ func _physics_process(delta):
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		area.get_parent().die()
-		queue_free()
 
 func _on_player_detect_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		print("Entered")
-		$AnimationPlayer.play("Shake")
+		var tween = create_tween()
+		tween.tween_property(self, "global_position", Vector2(global_position.x, global_position.y + 500), 1)
 
 func fall():
 	current_speed = speed 
