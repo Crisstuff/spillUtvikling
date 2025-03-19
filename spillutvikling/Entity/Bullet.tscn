@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://68ei0l5g1rjn"]
+[gd_scene load_steps=5 format=3 uid="uid://b0pgmjt4y7ccj"]
 
 [ext_resource type="Texture2D" uid="uid://15pqknebnff8" path="res://Sprites/topdownTanks_vector.svg" id="1_7xkv3"]
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_i82cr"]

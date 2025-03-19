@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtpgvkmpth7kt"]
+[gd_scene load_steps=8 format=3 uid="uid://dtpgvkmpth7kt"]
 
 [ext_resource type="Texture2D" uid="uid://d4mxo6laia5g7" path="res://Sprites/Cats/thumbnail_image.png" id="1_mp0mc"]
 [ext_resource type="PackedScene" uid="uid://ng6opin765kb" path="res://Entity/Player.tscn" id="2_cg1ni"]
+[ext_resource type="PackedScene" uid="uid://cncmgywfb3ixi" path="res://Entity/Pistol_Cat.tscn" id="3_rij84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysuln"]
 size = Vector2(290.909, 30.1531)
@@ -58,3 +59,6 @@ shape = SubResource("RectangleShape2D_1ua23")
 position = Vector2(641.5, 270.5)
 scale = Vector2(3.96, 3.92)
 shape = SubResource("RectangleShape2D_8omtn")
+
+[node name="Bullet_Cat" parent="." instance=ExtResource("3_rij84")]
+position = Vector2(722, 175)

@@ -1,11 +1,15 @@
-extends RigidBody2D
-var speed = 800
+extends Area2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var speed: float = 300.0
+var direction: Vector2 = Vector2.ZERO
 
+func _process(delta):
+	global_position += direction * speed * delta
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_area_entered(area):
+	if area.is_in_group("player"):
+		area.queue_free()  # Skader spilleren (kan utvides)
+		queue_free()  # Fjerner kulen
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	queue_free()  # Fjerner kulen når den forlater skjermen

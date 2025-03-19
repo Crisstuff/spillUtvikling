@@ -1,10 +1,30 @@
-[gd_scene load_steps=16 format=3 uid="uid://dre62e33gjodd"]
+[gd_scene load_steps=18 format=3 uid="uid://cncmgywfb3ixi"]
 
 [ext_resource type="Texture2D" uid="uid://c14d6scy8h0iy" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/Slimer/Spritesheets/slimer-idle.png" id="1_rf66y"]
+[ext_resource type="Script" path="res://Scripts/pistol_cat.gd" id="1_wn0gn"]
+[ext_resource type="Script" path="res://Scripts/kanonfeste.gd" id="2_1g2vo"]
 [ext_resource type="Texture2D" uid="uid://15pqknebnff8" path="res://Sprites/topdownTanks_vector.svg" id="2_ko542"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1svj"]
 size = Vector2(25, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h52s"]
+atlas = ExtResource("2_ko542")
+region = Rect2(500, 0, 25, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ssycj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h52s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5iqqp"]
+radius = 72.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0d662"]
 atlas = ExtResource("1_rf66y")
@@ -70,43 +90,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5iqqp"]
-radius = 72.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7h52s"]
-atlas = ExtResource("2_ko542")
-region = Rect2(500, 0, 25, 33)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ssycj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7h52s")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Bullet_Cat" type="CharacterBody2D"]
+script = ExtResource("1_wn0gn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_x1svj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_hgcpu")
-autoplay = "default"
-frame_progress = 0.533057
+[node name="kanonfeste" type="Node2D" parent="."]
+script = ExtResource("2_1g2vo")
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Area2D" type="Area2D" parent="Node2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-shape = SubResource("CircleShape2D_5iqqp")
-
-[node name="Canon" type="AnimatedSprite2D" parent="Node2D"]
+[node name="Canon" type="AnimatedSprite2D" parent="kanonfeste"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ssycj")
+
+[node name="Area2D" type="Area2D" parent="kanonfeste"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kanonfeste/Area2D"]
+shape = SubResource("CircleShape2D_5iqqp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 0.0011547
+sprite_frames = SubResource("SpriteFrames_hgcpu")
+frame_progress = 0.682063
