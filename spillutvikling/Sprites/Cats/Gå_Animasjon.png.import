@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi1njw6pq5ccd"
-path="res://.godot/imported/Gå_Animasjon.png-a6fbfc7bfa6b574bc562eb2e93b02d51.ctex"
+uid="uid://byxf1ge1o70u6"
+path="res://.godot/imported/Gå_Animasjon.png-e1e237fe6477d8651446e0f5d3b614d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Cats/Gå_Animasjon.png"
-dest_files=["res://.godot/imported/Gå_Animasjon.png-a6fbfc7bfa6b574bc562eb2e93b02d51.ctex"]
+source_file="res://Sprites/Cats/Gå_Animasjon.png"
+dest_files=["res://.godot/imported/Gå_Animasjon.png-e1e237fe6477d8651446e0f5d3b614d4.ctex"]
 
 [params]
 
