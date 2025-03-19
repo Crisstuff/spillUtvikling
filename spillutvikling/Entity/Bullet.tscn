@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://68ei0l5g1rjn"]
+
+[ext_resource type="Texture2D" uid="uid://15pqknebnff8" path="res://Sprites/topdownTanks_vector.svg" id="1_7xkv3"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_i82cr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iswxu"]
+atlas = ExtResource("1_7xkv3")
+region = Rect2(360, 273, 24, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_je7kw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iswxu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+script = ExtResource("1_i82cr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+rotation = 1.56856
+sprite_frames = SubResource("SpriteFrames_je7kw")
