@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bul5nqv0fdfg3"]
 
-[ext_resource type="Script" uid="uid://bfvxfuylky1mu" path="res://Scripts/character_body_2d.gd" id="1_0axpm"]
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_0axpm"]
 [ext_resource type="Texture2D" uid="uid://duj6o8p6p8emk" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/Grotto-escape-2-lizzard/spritesheets/tongue.png" id="2_qt07t"]
 [ext_resource type="Texture2D" uid="uid://n5jna2ddwa5" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/jump/frog-jump-1.png" id="3_72tus"]
 [ext_resource type="Texture2D" uid="uid://bpjnxhtgf03nn" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Enemies and NPC/frog/Sprites/jump/frog-jump-2.png" id="4_swsvs"]
