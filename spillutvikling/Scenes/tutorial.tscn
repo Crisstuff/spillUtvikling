@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dtpgvkmpth7kt"]
 
-[ext_resource type="Texture2D" uid="uid://by2pnmu30x1ak" path="res://Sprites/Cats/thumbnail_image.png" id="1_mp0mc"]
+[ext_resource type="Texture2D" uid="uid://d4mxo6laia5g7" path="res://Sprites/Cats/thumbnail_image.png" id="1_mp0mc"]
 [ext_resource type="PackedScene" uid="uid://ng6opin765kb" path="res://Entity/Player.tscn" id="2_cg1ni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysuln"]
@@ -54,7 +54,7 @@ position = Vector2(641.5, 371)
 scale = Vector2(3.96, 3.92)
 shape = SubResource("RectangleShape2D_1ua23")
 
-[node name="top sofa" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="top" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(641.5, 270.5)
 scale = Vector2(3.96, 3.92)
 shape = SubResource("RectangleShape2D_8omtn")
