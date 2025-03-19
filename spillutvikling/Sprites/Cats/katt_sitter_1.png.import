@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7bf4ua4u55vb"
-path="res://.godot/imported/tiles_spillutvikling.png-ea56a55999bb5320f7d397e00a0dbc2f.ctex"
+uid="uid://c1wvmo4l8fyw7"
+path="res://.godot/imported/katt_sitter_1.png-afec7c246329a5a206ea2063f7c132bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tiles_spillutvikling.png"
-dest_files=["res://.godot/imported/tiles_spillutvikling.png-ea56a55999bb5320f7d397e00a0dbc2f.ctex"]
+source_file="res://Sprites/Cats/katt_sitter_1.png"
+dest_files=["res://.godot/imported/katt_sitter_1.png-afec7c246329a5a206ea2063f7c132bb.ctex"]
 
 [params]
 
