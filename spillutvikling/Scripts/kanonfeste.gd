@@ -11,13 +11,21 @@ var can_shoot: bool = true
 
 # Nodes
 @onready var shoot_timer: Timer = $Timer
-@onready var bullet_spawn: Marker2D = $BulletSpawn
+@onready var bullet_spawn: Marker2D = $Marker2D  # Updated to match the node name
 
 func _ready():
+	# Debugging: Print the path of the kanonfeste node
+	print("Kanonfeste path: ", get_path())
+	
+	# Debugging: Check if BulletSpawn exists
+	if bullet_spawn:
+		print("BulletSpawn found at path: ", bullet_spawn.get_path())
+	else:
+		print("BulletSpawn not found! Check the scene tree.")
+	
 	# Set up the shoot timer
 	shoot_timer.wait_time = shoot_cooldown
 	shoot_timer.connect("timeout", self._on_shoot_timer_timeout)
-	print("Kanonfeste ready")
 
 func _on_Area2D_body_entered(_body: Node2D):
 	print("Body entered:", _body.name)

@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 		anim.play("Run")
 	else:
-		anim.play("idle")
+		anim.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
