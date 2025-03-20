@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://fo2s8i0r8m66" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Players/Foxy/Spritesheet.png" id="2_sua48"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml0ni"]
-size = Vector2(22.7272, 22.1939)
+size = Vector2(13.1313, 22.1939)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sua48"]
 atlas = ExtResource("2_sua48")
@@ -168,7 +168,8 @@ scale = Vector2(3.96, 3.92)
 script = ExtResource("1_53kef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.505051, 38.648)
+position = Vector2(-0.252502, 38.648)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ml0ni")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -183,3 +184,5 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.757576, 38.2653)
 shape = SubResource("RectangleShape2D_488go")
+
+[node name="Camera2D" type="Camera2D" parent="."]

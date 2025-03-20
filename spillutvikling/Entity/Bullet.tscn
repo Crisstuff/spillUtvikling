@@ -1,27 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0pgmjt4y7ccj"]
+[gd_scene load_steps=4 format=3 uid="uid://cr7anyxbq2hsj"]
 
-[ext_resource type="Texture2D" uid="uid://15pqknebnff8" path="res://Sprites/topdownTanks_vector.svg" id="1_7xkv3"]
+[ext_resource type="Texture2D" uid="uid://ck1fcx1erbjhi" path="res://Sprites/spikes.png" id="1_b56cq"]
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_i82cr"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iswxu"]
-atlas = ExtResource("1_7xkv3")
-region = Rect2(360, 273, 24, 39)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7mil"]
+size = Vector2(21, 20)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_je7kw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iswxu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_i82cr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-rotation = 1.56856
-sprite_frames = SubResource("SpriteFrames_je7kw")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57067
+scale = Vector2(0.0400021, 0.0400021)
+texture = ExtResource("1_b56cq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_t7mil")

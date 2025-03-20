@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d4mxo6laia5g7" path="res://Sprites/Cats/thumbnail_image.png" id="1_mp0mc"]
 [ext_resource type="PackedScene" uid="uid://ng6opin765kb" path="res://Entity/Player.tscn" id="2_cg1ni"]
-[ext_resource type="PackedScene" uid="uid://cncmgywfb3ixi" path="res://Entity/Pistol_Cat.tscn" id="3_rij84"]
+[ext_resource type="PackedScene" uid="uid://bmvmodrhovnpe" path="res://Entity/Pistol_Cat.tscn" id="3_rij84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ysuln"]
 size = Vector2(290.909, 30.1531)
