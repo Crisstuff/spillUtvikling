@@ -4,7 +4,7 @@ extends Node2D
 var current_speed = 0.0
 
 func _physics_process(delta):
-	position.y += current_speed + delta
+	pass#position.y += current_speed + delta
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
