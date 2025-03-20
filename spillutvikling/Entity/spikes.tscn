@@ -25,7 +25,7 @@ _data = {
 "shake": SubResource("Animation_cy6od")
 }
 
-[node name="Spikes" type="Node2D"]
+[node name="FallingSpikes" type="Node2D"]
 position = Vector2(0, -1)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_nh4uu")
