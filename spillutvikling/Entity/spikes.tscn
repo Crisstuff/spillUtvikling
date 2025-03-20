@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ck1fcx1erbjhi" path="res://Sprites/spikes.png" id="1_rfegf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qgip"]
-size = Vector2(1000.75, 3392)
+size = Vector2(1000.75, 8928)
 
 [sub_resource type="Animation" id="Animation_cy6od"]
 resource_name = "shake"
@@ -26,14 +26,14 @@ _data = {
 }
 
 [node name="Spikes" type="Node2D"]
-position = Vector2(-3, -60)
+position = Vector2(0, -1)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_nh4uu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, 264)
+position = Vector2(7.62939e-06, 28)
 rotation = 3.14159
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_rfegf")
 
 [node name="hitbox" type="Area2D" parent="."]
@@ -41,17 +41,18 @@ scale = Vector2(0.5, 0.5)
 monitorable = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
-position = Vector2(20, 360)
-scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-32, 832, -536, 448, -672, 88, -472, -168, 416, -200, 472, 456, 320, 560)
+position = Vector2(8, 16)
+scale = Vector2(0.1, 0.1)
+polygon = PackedVector2Array(-40, 880, -536, 448, -560, 160, -560, -200, 460, -200, 472, 456, 240, 680)
 
 [node name="playerDetect" type="Area2D" parent="."]
+position = Vector2(0, -2)
 scale = Vector2(0.5, 0.5)
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerDetect"]
-position = Vector2(-10.1875, 1076)
-scale = Vector2(0.5, 0.5)
+position = Vector2(4, 449.6)
+scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_1qgip")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
