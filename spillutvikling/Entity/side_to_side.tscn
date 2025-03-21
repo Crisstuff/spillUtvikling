@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://drrmblqyijduy"]
+[gd_scene load_steps=11 format=3 uid="uid://jnqt6q4ajj08"]
 
 [ext_resource type="Script" path="res://Scripts/side_to_side.gd" id="1_fkl01"]
 [ext_resource type="Texture2D" uid="uid://c1wvmo4l8fyw7" path="res://Sprites/Cats/katt_sitter_1.png" id="2_c6mmu"]
+[ext_resource type="Texture2D" uid="uid://boiun6cr2two8" path="res://Sprites/Cats/rat.png" id="2_nmvk7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p3n7k"]
-atlas = ExtResource("2_c6mmu")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lera7"]
+atlas = ExtResource("2_nmvk7")
+region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2kaa"]
 atlas = ExtResource("2_c6mmu")
@@ -19,7 +20,7 @@ region = Rect2(0, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p3n7k")
+"texture": SubResource("AtlasTexture_lera7")
 }],
 "loop": true,
 "name": &"Death",
@@ -38,13 +39,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qh3i"]
-size = Vector2(20, 16.1538)
+size = Vector2(20, 13.8461)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sixn4"]
 size = Vector2(25, 14.2308)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tiv8"]
-size = Vector2(25.8259, 5.57794)
+size = Vector2(29.8433, 5.57794)
 
 [node name="side_to_side" type="CharacterBody2D"]
 scale = Vector2(2.6, 2.6)
@@ -52,18 +53,20 @@ script = ExtResource("1_fkl01")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -6)
+position = Vector2(-0.384615, 6.53846)
+scale = Vector2(0.661058, 0.661058)
 sprite_frames = SubResource("SpriteFrames_ngkmm")
 animation = &"Death"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.92308)
+position = Vector2(0, 3.07691)
 shape = SubResource("RectangleShape2D_6qh3i")
 
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, 0.961538)
+position = Vector2(0, 2.69231)
 shape = SubResource("RectangleShape2D_sixn4")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -71,7 +74,8 @@ position = Vector2(0, -0.384615)
 scale = Vector2(0.670167, 1.43077)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.286955, -3.12499)
+position = Vector2(5.68434e-14, -2.41935)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0tiv8")
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
