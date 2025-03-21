@@ -8,4 +8,4 @@ func _ready():
 
 func _on_AttackArea_body_entered(body):
 	if body.is_in_group("enemies"): 
-		body.take_damage()
+		body.take_damage() 

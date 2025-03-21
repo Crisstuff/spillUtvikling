@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://ng6opin765kb"]
+[gd_scene load_steps=25 format=3 uid="uid://ng6opin765kb"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_53kef"]
 [ext_resource type="Texture2D" uid="uid://fo2s8i0r8m66" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Players/Foxy/Spritesheet.png" id="2_sua48"]
+[ext_resource type="PackedScene" uid="uid://dxdnky6d2bks2" path="res://Scenes/cat_scratch.tscn" id="3_b0vrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml0ni"]
 size = Vector2(22.7272, 22.1939)
@@ -187,3 +188,9 @@ shape = SubResource("RectangleShape2D_488go")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.757576, 11.9898)
 zoom = Vector2(1.5, 1.5)
+
+[node name="attack" type="Node2D" parent="."]
+
+[node name="CatScratch" parent="attack" instance=ExtResource("3_b0vrw")]
+position = Vector2(4.54545, 32.6531)
+scale = Vector2(2, 2)
