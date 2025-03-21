@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://jnqt6q4ajj08"]
+[gd_scene load_steps=10 format=3 uid="uid://drrmblqyijduy"]
 
 [ext_resource type="Script" path="res://Scripts/side_to_side.gd" id="1_fkl01"]
 [ext_resource type="Texture2D" uid="uid://c1wvmo4l8fyw7" path="res://Sprites/Cats/katt_sitter_1.png" id="2_c6mmu"]
@@ -72,7 +72,6 @@ scale = Vector2(0.670167, 1.43077)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.286955, -3.12499)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0tiv8")
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
