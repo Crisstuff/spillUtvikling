@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://cu1nwkhjxxqhf"]
 
-[ext_resource type="Script" path="res://spikes.gd" id="1_cxsth"]
-[ext_resource type="Texture2D" uid="uid://bdy083mh6jyiq" path="res://Sprites/sprite_0.png" id="1_ex0ue"]
+[ext_resource type="Script" path="res://spikes.gd" id="1_fvtsq"]
+[ext_resource type="Texture2D" uid="uid://bdy083mh6jyiq" path="res://Sprites/sprite_0.png" id="2_1m4st"]
 
 [node name="spikes" type="Node2D"]
-script = ExtResource("1_cxsth")
+script = ExtResource("1_fvtsq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-5, 16)
 rotation = 3.14159
 scale = Vector2(2, 2)
-texture = ExtResource("1_ex0ue")
+texture = ExtResource("2_1m4st")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false

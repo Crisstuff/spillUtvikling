@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=3 uid="uid://cnjkkrhfwjwtc"]
+
+[ext_resource type="Texture2D" uid="uid://c7bf4ua4u55vb" path="res://Sprites/tiles_spillutvikling.png" id="1_nawsv"]
+[ext_resource type="Texture2D" uid="uid://cisoojpg68igv" path="res://Sprites/bakgrunn_city.jpg" id="2_ruqfi"]
+[ext_resource type="PackedScene" uid="uid://cu1nwkhjxxqhf" path="res://Scenes/spikes.tscn" id="3_mgnjk"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgvm6"]
+texture = ExtResource("1_nawsv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2mtg4"]
+sources/0 = SubResource("TileSetAtlasSource_vgvm6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bibs8"]
+size = Vector2(243, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_je2rf"]
+size = Vector2(143.5, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrml1"]
+size = Vector2(102, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l0xr"]
+size = Vector2(341, 719)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvu1f"]
+size = Vector2(3426, 386.5)
+
+[node name="mainLevel" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_2mtg4")
+format = 2
+layer_0/tile_data = PackedInt32Array(1835061, 524288, 4, 1966132, 524288, 4, 524303, 524288, 4, 589839, 524288, 5, 655375, 524288, 6, 720911, 524288, 7, 524304, 589824, 4, 589840, 589824, 5, 655376, 589824, 6, 720912, 589824, 7, 524305, 655360, 4, 589841, 655360, 5, 655377, 655360, 6, 720913, 655360, 7, 524306, 720896, 4, 524328, 524288, 4, 589864, 524288, 5, 655400, 524288, 6, 720936, 524288, 7, 524329, 589824, 4, 589865, 589824, 5, 655401, 589824, 6, 720937, 589824, 7, 524330, 655360, 4, 589866, 655360, 5, 655402, 655360, 6, 720938, 655360, 7, 524331, 524288, 4, 589867, 524288, 5, 655403, 524288, 6, 720939, 524288, 7, 524332, 589824, 4, 589868, 589824, 5, 655404, 589824, 6, 720940, 589824, 7, 524333, 655360, 4, 589869, 655360, 5, 655405, 655360, 6, 720941, 655360, 7, 524334, 720896, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(1702, 326)
+scale = Vector2(1.77364, 1.77364)
+texture = ExtResource("2_ruqfi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="window1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(876.5, 388.5)
+shape = SubResource("RectangleShape2D_bibs8")
+
+[node name="window2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2447.25, 423)
+shape = SubResource("RectangleShape2D_je2rf")
+
+[node name="box1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1588, 491)
+shape = SubResource("RectangleShape2D_qrml1")
+
+[node name="box2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2886, 492)
+shape = SubResource("RectangleShape2D_qrml1")
+
+[node name="wall1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-167, 355)
+shape = SubResource("RectangleShape2D_3l0xr")
+
+[node name="wall2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3566, 359)
+shape = SubResource("RectangleShape2D_3l0xr")
+
+[node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1715, 830)
+shape = SubResource("RectangleShape2D_mvu1f")
+
+[node name="spikes" parent="." instance=ExtResource("3_mgnjk")]
+position = Vector2(1210, 479)
+scale = Vector2(2, 2)

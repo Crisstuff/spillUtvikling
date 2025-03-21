@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2vaffjxjbue4"]
 
 [ext_resource type="Script" path="res://Scripts/spikes.gd" id="1_nh4uu"]
-[ext_resource type="Texture2D" uid="uid://ck1fcx1erbjhi" path="res://Sprites/spikes.png" id="1_rfegf"]
+[ext_resource type="Texture2D" uid="uid://bdy083mh6jyiq" path="res://Sprites/sprite_0.png" id="2_7t82o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qgip"]
 size = Vector2(1000.75, 8928)
@@ -31,10 +31,10 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_nh4uu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(7.62939e-06, 28)
-rotation = 3.14159
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_rfegf")
+texture_filter = 1
+position = Vector2(4, 32)
+scale = Vector2(2, 2)
+texture = ExtResource("2_7t82o")
 
 [node name="hitbox" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -43,7 +43,7 @@ monitorable = false
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox"]
 position = Vector2(8, 16)
 scale = Vector2(0.1, 0.1)
-polygon = PackedVector2Array(-40, 880, -536, 448, -560, 160, -560, -200, 460, -200, 472, 456, 240, 680)
+polygon = PackedVector2Array(-120, 920, -560, 680, -560, 160, -560, -120, 440, -120, 440, 720, 200, 800)
 
 [node name="playerDetect" type="Area2D" parent="."]
 position = Vector2(0, -2)
@@ -51,7 +51,7 @@ scale = Vector2(0.5, 0.5)
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="playerDetect"]
-position = Vector2(4, 449.6)
+position = Vector2(0, 456)
 scale = Vector2(0.1, 0.1)
 shape = SubResource("RectangleShape2D_1qgip")
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxdnky6d2bks2"]
+
+[ext_resource type="Script" path="res://Scripts/cat_scratch.gd" id="1_q5ob4"]
+[ext_resource type="Texture2D" uid="uid://bobwb3upe7msy" path="res://Sprites/catScratch.png" id="2_f13hg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqh2c"]
+size = Vector2(6, 8)
+
+[node name="CatScratch" type="Node2D"]
+script = ExtResource("1_q5ob4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 5)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_f13hg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_iqh2c")
