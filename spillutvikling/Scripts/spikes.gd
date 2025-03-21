@@ -18,6 +18,7 @@ func _on_player_detect_area_entered(area: Area2D) -> void:
 
 func killPlayer(player):
 	player.die()
+	get_tree().change_scene_to_file("res://Scenes/tittle_screen.tscn")
 	print("Reset traps here")
 
 func fall():

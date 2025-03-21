@@ -14,30 +14,21 @@ script = ExtResource("1_r2cde")
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 485.0
-offset_top = 47.0
-offset_right = 693.0
-offset_bottom = 183.0
+offset_left = 451.0
+offset_top = 58.0
+offset_right = 659.0
+offset_bottom = 194.0
+scale = Vector2(1.4416, 1.4416)
 text = "Start GAME"
-
-[node name="ScorebordButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-offset_left = 486.0
-offset_top = 210.0
-offset_right = 690.0
-offset_bottom = 343.0
-text = "View 
-Scorebord 
-"
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 489.0
-offset_top = 371.0
-offset_right = 700.0
-offset_bottom = 509.0
+offset_left = 455.0
+offset_top = 381.0
+offset_right = 666.0
+offset_bottom = 519.0
+scale = Vector2(1.41158, 1.41158)
 text = "Quit til desktop
 "
 

@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1nyi22caquof"]
+
+[ext_resource type="Texture2D" uid="uid://bolyevfq3m0a5" path="res://Sprites/tutorial.jpeg" id="1_koa6r"]
+[ext_resource type="PackedScene" uid="uid://ng6opin765kb" path="res://Entity/Player.tscn" id="2_il2b0"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="3_v4x51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysuln"]
+size = Vector2(431.061, 30.1531)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sperg"]
+size = Vector2(73.6111, 139.426)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ua23"]
+size = Vector2(51.6412, 39.5408)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ghxf"]
+size = Vector2(159, 304.5)
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="ThumbnailImage" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(754, 193)
+scale = Vector2(0.769795, 0.769796)
+texture = ExtResource("1_koa6r")
+
+[node name="Player" parent="." instance=ExtResource("2_il2b0")]
+position = Vector2(1025, 212)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 4
+
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(758, 442)
+scale = Vector2(3.96, 3.92)
+shape = SubResource("RectangleShape2D_ysuln")
+
+[node name="left wall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-145.75, 273)
+scale = Vector2(3.96, 3.92)
+shape = SubResource("RectangleShape2D_sperg")
+
+[node name="right wall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1650, 241)
+scale = Vector2(3.96, 3.92)
+shape = SubResource("RectangleShape2D_sperg")
+
+[node name="roof" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(677, -53)
+scale = Vector2(3.96, 3.92)
+shape = SubResource("RectangleShape2D_ysuln")
+
+[node name="bottom sofa" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(703.75, 285.5)
+scale = Vector2(3.96, 3.92)
+shape = SubResource("RectangleShape2D_1ua23")
+
+[node name="Door" type="Area2D" parent="."]
+script = ExtResource("3_v4x51")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(111.5, 184.75)
+shape = SubResource("RectangleShape2D_1ghxf")
+
+[connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]

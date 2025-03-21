@@ -39,5 +39,6 @@ func die():
 	queue_free()
 
 func killPlayer(player):
+	get_tree().change_scene_to_file("res://Scenes/tittle_screen.tscn")
 	player.die()
 	print("Reset traps here")
