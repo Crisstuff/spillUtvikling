@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ng6opin765kb"]
+[gd_scene load_steps=23 format=3 uid="uid://ng6opin765kb"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_53kef"]
 [ext_resource type="Texture2D" uid="uid://fo2s8i0r8m66" path="res://Sprites/Sunny Land Collection Files/Assets/Characters/Players/Foxy/Spritesheet.png" id="2_sua48"]
@@ -40,10 +40,6 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_sw16q"]
 atlas = ExtResource("3_p0jbs")
 region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3perd"]
-atlas = ExtResource("3_p0jbs")
-region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ybhh"]
 atlas = ExtResource("3_1xxrr")
@@ -105,13 +101,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sw16q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3perd")
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 0.04
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -154,8 +147,7 @@ position = Vector2(-0.252527, 34.1837)
 sprite_frames = SubResource("SpriteFrames_81rq1")
 animation = &"Idle"
 autoplay = "Idle"
-frame = 1
-frame_progress = 0.429389
+frame_progress = 0.0236088
 
 [node name="Area2D" type="Area2D" parent="."]
 
