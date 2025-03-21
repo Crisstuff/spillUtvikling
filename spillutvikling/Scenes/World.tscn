@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxihs5347o5os"]
+[gd_scene load_steps=8 format=3 uid="uid://cxihs5347o5os"]
 
 [ext_resource type="Texture2D" uid="uid://2md0li1shlm1" path="res://Sprites/Sunny Land Collection Files/Assets/Environments/Forest/Forest Pack/PNG/environment/tileset.png" id="1_0pvqn"]
 [ext_resource type="PackedScene" uid="uid://c2vaffjxjbue4" path="res://Entity/spikes.tscn" id="2_0fe73"]
 [ext_resource type="PackedScene" uid="uid://ng6opin765kb" path="res://Entity/Player.tscn" id="3_h4txy"]
 [ext_resource type="PackedScene" uid="uid://cgac3i13lhpbf" path="res://Entity/Pistol_Cat.tscn" id="4_j5u8f"]
+[ext_resource type="PackedScene" uid="uid://jnqt6q4ajj08" path="res://Entity/side_to_side.tscn" id="5_ubuu1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxt7u"]
 texture = ExtResource("1_0pvqn")
@@ -224,4 +225,7 @@ position = Vector2(687, 116)
 position = Vector2(483, 324)
 
 [node name="Bullet_Cat" parent="." instance=ExtResource("4_j5u8f")]
-position = Vector2(1367, 651)
+position = Vector2(1824, 297)
+
+[node name="side_to_side" parent="." instance=ExtResource("5_ubuu1")]
+position = Vector2(1404, 496)

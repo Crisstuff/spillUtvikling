@@ -1,14 +1,16 @@
 extends CharacterBody2D
-class_name Enemy
 @export var speed: float = 100.0  # NPC movement speed
 var direction: int = -1  # Start moving left (-1 = left, 1 = right)
 var just_reversed: bool = false  # To prevent immediate re-reversing
 
+@onready var anim = get_node("AnimatedSprite2D")
+
+
 func _physics_process(delta: float) -> void:
-	# Apply gravity if not on the floor
+	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+
 	# Move the NPC in the current direction
 	velocity.x = speed * direction
 	move_and_slide()
@@ -20,11 +22,10 @@ func _physics_process(delta: float) -> void:
 		just_reversed = true  # Set the flag to prevent immediate re-reversing
 	else:
 		just_reversed = false  # Reset the flag if no collision
-		
+
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		killPlayer(area.get_parent())
-
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	# Check if the area belongs to the player
@@ -32,14 +33,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		# Kill the enemy when the player hits the Area2D
 		die()
 
-func killPlayer(player):
-	player.die()
-	print("Reset traps here")
-	
 func die():
 	# Remove the enemy from the scene
 	queue_free()
 
-
-	
-	
+func killPlayer(player):
+	player.die()
+	print("Reset traps here")
