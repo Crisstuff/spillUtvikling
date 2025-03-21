@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://rd8kp82t1wnk"]
+
+[ext_resource type="Script" path="res://Scripts/bullet_spawn.gd" id="1_mrk16"]
+[ext_resource type="Texture2D" uid="uid://ck1fcx1erbjhi" path="res://Sprites/spikes.png" id="2_g2oao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7mil"]
+size = Vector2(21, 20)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_mrk16")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57067
+scale = Vector2(0.0400021, 0.0400021)
+texture = ExtResource("2_g2oao")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_t7mil")
