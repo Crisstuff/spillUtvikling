@@ -3,7 +3,7 @@ class_name Player
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -900.0
+const JUMP_VELOCITY = -600.0
 @onready var anim = get_node("AnimatedSprite2D")
 
 
@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 		anim.play("Run")
 	else:
-		anim.play("idle")
+		anim.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()

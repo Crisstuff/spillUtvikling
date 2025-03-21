@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnjkkrhfwjwtc"]
+[gd_scene load_steps=16 format=4 uid="uid://cnjkkrhfwjwtc"]
 
 [ext_resource type="Texture2D" uid="uid://c7bf4ua4u55vb" path="res://Sprites/tiles_spillutvikling.png" id="1_nawsv"]
 [ext_resource type="Texture2D" uid="uid://cisoojpg68igv" path="res://Sprites/bakgrunn_city.jpg" id="2_ruqfi"]
 [ext_resource type="PackedScene" uid="uid://cu1nwkhjxxqhf" path="res://Scenes/spikes.tscn" id="3_mgnjk"]
+[ext_resource type="PackedScene" uid="uid://ng6opin765kb" path="res://Entity/Player.tscn" id="4_4jqma"]
+[ext_resource type="Script" path="res://Scripts/door2.gd" id="5_kowvy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgvm6"]
 texture = ExtResource("1_nawsv")
@@ -81,13 +83,22 @@ size = Vector2(341, 719)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvu1f"]
 size = Vector2(3426, 386.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6lwi"]
+size = Vector2(116, 181.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0hsu"]
+size = Vector2(43, 44.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xako3"]
+size = Vector2(159, 322)
+
 [node name="mainLevel" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMapLayer" parent="."]
+z_index = 1
 scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAnAAgAAAAIAAQAAAAnAAkAAAAIAAUAAAAnAAoAAAAIAAYAAAAnAAsAAAAIAAcAAAAoAAgAAAAJAAQAAAAoAAkAAAAJAAUAAAAoAAoAAAAJAAYAAAAoAAsAAAAJAAcAAAApAAgAAAAKAAQAAAApAAkAAAAKAAUAAAApAAoAAAAKAAYAAAApAAsAAAAKAAcAAAAsAAgAAAAIAAQAAAAsAAkAAAAIAAUAAAAsAAoAAAAIAAYAAAAsAAsAAAAIAAcAAAAtAAgAAAAJAAQAAAAtAAkAAAAJAAUAAAAtAAoAAAAJAAYAAAAtAAsAAAAJAAcAAAAuAAgAAAAKAAQAAAAuAAkAAAAKAAUAAAAuAAoAAAAKAAYAAAAuAAsAAAAKAAcAAAAPAAgAAAAIAAQAAAAPAAkAAAAIAAUAAAAPAAoAAAAIAAYAAAAPAAsAAAAIAAcAAAAQAAgAAAAJAAQAAAAQAAkAAAAJAAUAAAAQAAoAAAAJAAYAAAAQAAsAAAAJAAcAAAARAAgAAAAKAAQAAAARAAkAAAAKAAUAAAARAAoAAAAKAAYAAAARAAsAAAAKAAcAAAAvAAgAAAALAAQAAAAqAAgAAAALAAQAAAASAAgAAAALAAQAAAA=")
 tile_set = SubResource("TileSet_2mtg4")
-format = 2
-layer_0/tile_data = PackedInt32Array(1835061, 524288, 4, 1966132, 524288, 4, 524303, 524288, 4, 589839, 524288, 5, 655375, 524288, 6, 720911, 524288, 7, 524304, 589824, 4, 589840, 589824, 5, 655376, 589824, 6, 720912, 589824, 7, 524305, 655360, 4, 589841, 655360, 5, 655377, 655360, 6, 720913, 655360, 7, 524306, 720896, 4, 524328, 524288, 4, 589864, 524288, 5, 655400, 524288, 6, 720936, 524288, 7, 524329, 589824, 4, 589865, 589824, 5, 655401, 589824, 6, 720937, 589824, 7, 524330, 655360, 4, 589866, 655360, 5, 655402, 655360, 6, 720938, 655360, 7, 524331, 524288, 4, 589867, 524288, 5, 655403, 524288, 6, 720939, 524288, 7, 524332, 589824, 4, 589868, 589824, 5, 655404, 589824, 6, 720940, 589824, 7, 524333, 655360, 4, 589869, 655360, 5, 655405, 655360, 6, 720941, 655360, 7, 524334, 720896, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
@@ -123,9 +134,62 @@ position = Vector2(3566, 359)
 shape = SubResource("RectangleShape2D_3l0xr")
 
 [node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1715, 830)
+position = Vector2(1718, 742)
 shape = SubResource("RectangleShape2D_mvu1f")
+
+[node name="trashCan" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(813, 486.5)
+shape = SubResource("RectangleShape2D_p6lwi")
+
+[node name="trashCan2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1964, 484.75)
+shape = SubResource("RectangleShape2D_p6lwi")
+
+[node name="trashCan3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2204, 486)
+shape = SubResource("RectangleShape2D_p6lwi")
 
 [node name="spikes" parent="." instance=ExtResource("3_mgnjk")]
 position = Vector2(1210, 479)
 scale = Vector2(2, 2)
+
+[node name="Area2D2" type="Area2D" parent="spikes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes/Area2D2"]
+position = Vector2(-3, 22.25)
+shape = SubResource("RectangleShape2D_l0hsu")
+
+[node name="Player" parent="." instance=ExtResource("4_4jqma")]
+position = Vector2(3077, 351)
+
+[node name="Door" type="Area2D" parent="."]
+script = ExtResource("5_kowvy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(601, 385)
+shape = SubResource("RectangleShape2D_xako3")
+
+[node name="spikes2" parent="." instance=ExtResource("3_mgnjk")]
+position = Vector2(2447, 458)
+scale = Vector2(2, 2)
+
+[node name="Area2D2" type="Area2D" parent="spikes2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes2/Area2D2"]
+position = Vector2(-3, 22.25)
+shape = SubResource("RectangleShape2D_l0hsu")
+
+[node name="spikes3" parent="." instance=ExtResource("3_mgnjk")]
+position = Vector2(2085, 456)
+scale = Vector2(2, 2)
+
+[node name="Area2D2" type="Area2D" parent="spikes3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes3/Area2D2"]
+position = Vector2(-3, 22.25)
+shape = SubResource("RectangleShape2D_l0hsu")
+
+[connection signal="area_entered" from="spikes/Area2D2" to="spikes" method="_on_area_2d_2_area_entered"]
+[connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
+[connection signal="area_entered" from="spikes2/Area2D2" to="spikes2" method="_on_area_2d_2_area_entered"]
+[connection signal="area_entered" from="spikes3/Area2D2" to="spikes3" method="_on_area_2d_2_area_entered"]
