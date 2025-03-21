@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dtpgvkmpth7kt"]
 
-[ext_resource type="Texture2D" uid="uid://ydf4n8q3452e" path="res://Sprites/tutorial.jpeg" id="1_gmv3u"]
+[ext_resource type="Texture2D" uid="uid://bolyevfq3m0a5" path="res://Sprites/tutorial.jpeg" id="1_gmv3u"]
 [ext_resource type="PackedScene" uid="uid://ng6opin765kb" path="res://Entity/Player.tscn" id="2_cg1ni"]
 [ext_resource type="Script" path="res://Scripts/door.gd" id="3_ea4yo"]
 

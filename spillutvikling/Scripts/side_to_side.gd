@@ -7,9 +7,6 @@ var just_reversed: bool = false  # To prevent immediate re-reversing
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
 
 	# Move the NPC in the current direction
 	velocity.x = speed * direction

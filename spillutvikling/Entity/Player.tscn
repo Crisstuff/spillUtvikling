@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dxdnky6d2bks2" path="res://Scenes/cat_scratch.tscn" id="3_b0vrw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ml0ni"]
-size = Vector2(22.7272, 22.1939)
+size = Vector2(18.1818, 22.1939)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sua48"]
 atlas = ExtResource("2_sua48")
@@ -169,14 +169,15 @@ scale = Vector2(3.96, 3.92)
 script = ExtResource("1_53kef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.505051, 38.648)
+position = Vector2(-0.757568, 38.648)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ml0ni")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-0.252527, 34.1837)
 sprite_frames = SubResource("SpriteFrames_81rq1")
-animation = &"Death"
+animation = &"Idle"
 autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="."]

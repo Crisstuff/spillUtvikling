@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://cnjkkrhfwjwtc"]
+[gd_scene load_steps=17 format=4 uid="uid://cnjkkrhfwjwtc"]
 
-[ext_resource type="Texture2D" uid="uid://c7bf4ua4u55vb" path="res://Sprites/tiles_spillutvikling.png" id="1_nawsv"]
+[ext_resource type="Texture2D" uid="uid://bns0ack80stqb" path="res://Sprites/tiles_spillutvikling.png" id="1_nawsv"]
 [ext_resource type="Texture2D" uid="uid://cisoojpg68igv" path="res://Sprites/bakgrunn_city.jpg" id="2_ruqfi"]
 [ext_resource type="PackedScene" uid="uid://cu1nwkhjxxqhf" path="res://Scenes/spikes.tscn" id="3_mgnjk"]
 [ext_resource type="PackedScene" uid="uid://ng6opin765kb" path="res://Entity/Player.tscn" id="4_4jqma"]
 [ext_resource type="Script" path="res://Scripts/door2.gd" id="5_kowvy"]
+[ext_resource type="PackedScene" uid="uid://jnqt6q4ajj08" path="res://Entity/side_to_side.tscn" id="6_ksved"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgvm6"]
 texture = ExtResource("1_nawsv")
@@ -188,6 +189,14 @@ scale = Vector2(2, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spikes3/Area2D2"]
 position = Vector2(-3, 22.25)
 shape = SubResource("RectangleShape2D_l0hsu")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="side_to_side" parent="Enemies" instance=ExtResource("6_ksved")]
+position = Vector2(207, 522)
+
+[node name="side_to_side2" parent="Enemies" instance=ExtResource("6_ksved")]
+position = Vector2(2624, 522)
 
 [connection signal="area_entered" from="spikes/Area2D2" to="spikes" method="_on_area_2d_2_area_entered"]
 [connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
